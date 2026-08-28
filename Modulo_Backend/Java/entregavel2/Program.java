@@ -11,10 +11,11 @@ public class Program {
 
         System.out.println(carro1);
         System.out.println(carro2);
-
+        
         carro1.setAno(2022);
-
+        
         System.out.println(carro1);
+        System.out.println(carro2);
 
         int maior = Math.max(alvaro.getIdade(), Math.max(joao.getIdade(), guilherme.getIdade()));
         if (maior == alvaro.getIdade()) {
