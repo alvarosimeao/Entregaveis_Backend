@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="700" viewBox="0 0 1100 700" role="img" aria-labelledby="title desc">
+  <title id="title">Modelo Entidade-Relacionamento da loja virtual</title>
+  <desc id="desc">Cliente realiza pedidos; pedido contém itens; produto aparece em itens e possui estoque.</desc>
+  <style>
+    .bg{fill:#f8fafc}.card{fill:#fff;stroke:#334155;stroke-width:2;rx:12}.head{fill:#dbeafe}.name{font:700 20px Arial,sans-serif;fill:#0f172a}.field{font:16px Arial,sans-serif;fill:#334155}.key{font:700 14px Arial,sans-serif;fill:#1d4ed8}.line{stroke:#475569;stroke-width:2.5;fill:none}.label{font:700 15px Arial,sans-serif;fill:#334155}.hint{font:15px Arial,sans-serif;fill:#64748b}
+  </style>
+  <rect class="bg" width="1100" height="700"/>
+  <text x="48" y="47" class="name">Loja virtual — MER e modelo lógico</text>
+  <text x="48" y="74" class="hint">PK = chave primária · FK = chave estrangeira · 1:N e 1:1 indicam cardinalidade</text>
+
+  <path class="line" d="M260 220 H405"/>
+  <text x="277" y="208" class="label">1</text><text x="381" y="208" class="label">N</text>
+  <path class="line" d="M540 282 V382"/>
+  <text x="551" y="305" class="label">1</text><text x="551" y="370" class="label">N</text>
+  <path class="line" d="M675 466 H817 V220 H850"/>
+  <text x="685" y="456" class="label">N</text><text x="827" y="208" class="label">1</text>
+  <path class="line" d="M975 280 V382"/>
+  <text x="986" y="304" class="label">1</text><text x="986" y="370" class="label">1</text>
+
+  <g transform="translate(50 140)">
+    <rect class="card" width="210" height="150"/><path class="head" d="M12 1 H198 Q209 1 209 12 V42 H1 V12 Q1 1 12 1"/>
+    <text x="18" y="29" class="name">Cliente</text>
+    <text x="18" y="68" class="field"><tspan class="key">PK</tspan> id</text>
+    <text x="18" y="96" class="field">nome</text><text x="18" y="124" class="field">email (UNIQUE)</text>
+  </g>
+  <g transform="translate(405 140)">
+    <rect class="card" width="270" height="142"/><path class="head" d="M12 1 H258 Q269 1 269 12 V42 H1 V12 Q1 1 12 1"/>
+    <text x="18" y="29" class="name">Pedido</text>
+    <text x="18" y="68" class="field"><tspan class="key">PK</tspan> id</text>
+    <text x="18" y="96" class="field"><tspan class="key">FK</tspan> cliente_id</text>
+    <text x="18" y="124" class="field">status, criado_em</text>
+  </g>
+  <g transform="translate(850 140)">
+    <rect class="card" width="210" height="140"/><path class="head" d="M12 1 H198 Q209 1 209 12 V42 H1 V12 Q1 1 12 1"/>
+    <text x="18" y="29" class="name">Produto</text>
+    <text x="18" y="68" class="field"><tspan class="key">PK</tspan> id</text>
+    <text x="18" y="96" class="field">sku (UNIQUE)</text>
+    <text x="18" y="124" class="field">nome, preco</text>
+  </g>
+  <g transform="translate(405 382)">
+    <rect class="card" width="270" height="165"/><path class="head" d="M12 1 H258 Q269 1 269 12 V42 H1 V12 Q1 1 12 1"/>
+    <text x="18" y="29" class="name">ItemPedido</text>
+    <text x="18" y="68" class="field"><tspan class="key">PK/FK</tspan> pedido_id</text>
+    <text x="18" y="96" class="field"><tspan class="key">PK/FK</tspan> produto_id</text>
+    <text x="18" y="124" class="field">quantidade</text>
+    <text x="18" y="151" class="field">preco_unitario</text>
+  </g>
+  <g transform="translate(850 382)">
+    <rect class="card" width="210" height="112"/><path class="head" d="M12 1 H198 Q209 1 209 12 V42 H1 V12 Q1 1 12 1"/>
+    <text x="18" y="29" class="name">Estoque</text>
+    <text x="18" y="68" class="field"><tspan class="key">PK/FK</tspan> produto_id</text>
+    <text x="18" y="96" class="field">quantidade</text>
+  </g>
+  <text x="50" y="630" class="hint">Pedido × Produto é N:N no domínio e se transforma em ItemPedido no modelo lógico.</text>
+</svg>
