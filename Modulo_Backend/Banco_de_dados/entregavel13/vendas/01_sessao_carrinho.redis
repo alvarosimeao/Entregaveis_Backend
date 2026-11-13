@@ -1,0 +1,5 @@
+HSET cart:session:sessao-demo product:FON-001 1
+HSET cart:session:sessao-demo product:CAM-001 2
+EXPIRE cart:session:sessao-demo 1800
+HGETALL cart:session:sessao-demo
+TTL cart:session:sessao-demo
