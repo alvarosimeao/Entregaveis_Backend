@@ -1,0 +1,6 @@
+HSET cart:user:u1 product:FON-001 2
+HSET cart:user:u1 product:CAM-001 1
+EXPIRE cart:user:u1 86400
+HGETALL cart:user:u1
+TTL cart:user:u1
+DEL cart:user:u1
