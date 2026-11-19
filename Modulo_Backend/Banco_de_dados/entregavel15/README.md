@@ -1,6 +1,6 @@
 # Entregável da semana 15 — MER, modelo lógico e 3FN
 
-Continuação do escopo da [semana 14](../entregavel14/README.md). O diagrama exportado em [modelo_er.svg](modelo_er.svg) mostra as entidades e cardinalidades. A tabela `itens_pedido` resolve o relacionamento N:N entre `pedidos` e `produtos`. `estoque.produto_id` é ao mesmo tempo PK e FK, impondo no máximo um saldo por produto.
+Continuação do escopo da [semana 14](../entregavel14/README.md). O diagrama exportado em [modelo_er.svg](modelo_er.svg) mostra as entidades e cardinalidades impostas pelo DDL. A tabela `itens_pedido` resolve o relacionamento N:N entre `pedidos` e `produtos`. `estoque.produto_id` é ao mesmo tempo PK e FK. Cada saldo pertence a um produto, e um produto cadastrado pode ter zero ou um registro de saldo. As chaves estrangeiras também permitem um cliente sem pedidos e um pedido sem itens; a regra de confirmar somente pedidos com itens pertence ao fluxo de gravação.
 
 ## Modelo lógico
 
@@ -32,3 +32,4 @@ psql -d postgres -v ON_ERROR_STOP=1 -f 02_dados_e_consultas.sql
 O segundo script insere dados em tabelas relacionadas e executa duas consultas com `JOIN`. Um `INSERT` inválido está comentado no fim para demonstrar o erro de FK quando executado isoladamente.
 
 Fonte do enunciado: [AVA — Entregável Semana 15](https://ead.ceuma.br/mod/assign/view.php?id=25611).
+

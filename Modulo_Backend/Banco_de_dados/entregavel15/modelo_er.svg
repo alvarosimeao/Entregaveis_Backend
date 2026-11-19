@@ -6,16 +6,16 @@
   </style>
   <rect class="bg" width="1100" height="700"/>
   <text x="48" y="47" class="name">Loja virtual — MER e modelo lógico</text>
-  <text x="48" y="74" class="hint">PK = chave primária · FK = chave estrangeira · 1:N e 1:1 indicam cardinalidade</text>
+  <text x="48" y="74" class="hint">PK = chave primária · FK = chave estrangeira · Cardinalidades do modelo implementado</text>
 
   <path class="line" d="M260 220 H405"/>
-  <text x="277" y="208" class="label">1</text><text x="381" y="208" class="label">N</text>
+  <text x="277" y="208" class="label">1</text><text x="363" y="208" class="label">0..N</text>
   <path class="line" d="M540 282 V382"/>
-  <text x="551" y="305" class="label">1</text><text x="551" y="370" class="label">N</text>
+  <text x="551" y="305" class="label">1</text><text x="551" y="370" class="label">0..N</text>
   <path class="line" d="M675 466 H817 V220 H850"/>
-  <text x="685" y="456" class="label">N</text><text x="827" y="208" class="label">1</text>
+  <text x="685" y="456" class="label">0..N</text><text x="827" y="208" class="label">1</text>
   <path class="line" d="M975 280 V382"/>
-  <text x="986" y="304" class="label">1</text><text x="986" y="370" class="label">1</text>
+  <text x="986" y="304" class="label">1</text><text x="986" y="370" class="label">0..1</text>
 
   <g transform="translate(50 140)">
     <rect class="card" width="210" height="150"/><path class="head" d="M12 1 H198 Q209 1 209 12 V42 H1 V12 Q1 1 12 1"/>
@@ -53,3 +53,4 @@
   </g>
   <text x="50" y="630" class="hint">Pedido × Produto é N:N no domínio e se transforma em ItemPedido no modelo lógico.</text>
 </svg>
+
